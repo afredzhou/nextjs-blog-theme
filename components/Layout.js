@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import { useEffect } from 'react';
 import styles from './Layout.module.css';
 import Navbar from './Navbar';
+import Footer from './Footer';
+
 
 export function GradientBackground({ variant, className }) {
   const classes = classNames(
@@ -56,6 +58,7 @@ export default function Layout({ children }) {
       <div className="flex flex-col items-center max-w-2xl w-full mx-auto">
         {children}
       </div>
+      <Footer></Footer>
     </div>
   );
 }

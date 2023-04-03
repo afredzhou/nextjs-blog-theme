@@ -1,163 +1,119 @@
-import { Fragment } from 'react'
-import Image from "next/image"
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-const sunIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="25"
-    height="24"
-    fill="none"
-    viewBox="0 0 25 24"
-    className="dark:opacity-50"
-  >
-    <g
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      clipPath="url(#clip0_192_823)"
-    >
-      <path d="M12.5 17a5 5 0 100-10 5 5 0 000 10zM12.5 1v2M12.5 21v2M4.72 4.22l1.42 1.42M18.86 18.36l1.42 1.42M1.5 12h2M21.5 12h2M4.72 19.78l1.42-1.42M18.86 5.64l1.42-1.42"></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_192_823">
-        <path
-          className="fill-current text-white"
-          d="M0 0H24V24H0z"
-          transform="translate(.5)"
-        ></path>
-      </clipPath>
-    </defs>
-  </svg>
-);
-
-const moonIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="21"
-    height="20"
-    fill="none"
-    viewBox="0 0 21 20"
-  >
-    <path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      className="stroke-current text-gray-400 dark:text-white"
-      d="M19.5 10.79A9 9 0 119.71 1a7 7 0 009.79 9.79v0z"
-    ></path>
-  </svg>
-);
-
-const ThemeSwitcher = () => {
-  return (
-    <div className="flex mt-6 bg-white justify-center dark:bg-gray-900 rounded-3xl p-1">
-      <button
-        type="button"
-        aria-label="Use Dark Mode"
-        onClick={() => {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }}
-        className="flex items-center h-full pr-2 dark:bg-primary rounded-3xl flex justify-center align-center p-2 w-24 h-10 transition"
-      >
-        {moonIcon}
-      </button>
-
-      <button
-        type="button"
-        aria-label="Use Light Mode"
-        onClick={() => {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        }}
-        className="flex items-center h-full pr-2 bg-primary dark:bg-transparent rounded-3xl flex justify-center align-center p-2 w-24 h-10 transition"
-      >
-        {sunIcon}
-      </button>
-    </div>
-  );
-};
-
-
-
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import Link from "next/link";
+import ThemeChanger from "./DarkSwitch";
+import { Disclosure } from "@headlessui/react";
+import Image from "next/image";
 
 export default function Navbar() {
-  return (
-    <Disclosure as="nav" className="bg-gray-800">
-      {({ open }) => (
-        <>
-          <div className="mx-auto  px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+    // const navigation = [
+    //     "Product",
+    //     "Features",
+    //     "Pricing",
+    //     "Company",
+    //     "Blog",
+    // ];
 
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
+    const navigation = {
+        Product:'https://www.kaiyanmedical.com/',
+        Features:'https://www.kaiyanmedical.com/',
+        Pricing:'https://www.kaiyanmedical.com/',
+        Company: 'https://www.kaiyanmedical.com/',
+        Blog:'https://www.kaiyanmedical.com/',
+    };
+
+    return (
+        <div className="w-full">
+            <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+                {/* Logo  */}
+                <Disclosure>
+                    {({ open }) => (
+                        <>
+                            <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
+                                <Link  href="/">
+                                    <a className="flex items-center space-x-2 text-2xl font-medium text-black dark:text-gray-100">
+
+                      <Image
+                          src="/img/favicon.svg"
+                          alt="N"
+                          width="30"
+                          height="30"
+                          className="w-8"
+                      />
+
+                                        <span>Afred Zhou</span>
+                                    </a>
+                                </Link>
+
+                                <Disclosure.Button
+                                    aria-label="Toggle Menu"
+                                    className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700">
+                                    <svg
+                                        className="w-6 h-6 fill-current"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        {open && (
+                                            <path
+                                                fillRule="evenodd"
+                                                clipRule="evenodd"
+                                                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+                                            />
+                                        )}
+                                        {!open && (
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                                            />
+                                        )}
+                                    </svg>
+                                </Disclosure.Button>
+
+                                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
+                                    <>
+                                        {Object.keys(navigation).map((item, index) => (
+                                            <Link key={index} href="/">
+                                                <a className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none dark:focus:bg-trueGray-700">
+                                                    {item}
+                                                </a>
+                                            </Link>
+                                        ))}
+                                        <Link target="_self" href="/#chatgpt">
+                                            <a className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
+                                                Get Started
+                                            </a>
+                                        </Link>
+                                    </>
+                                </Disclosure.Panel>
+                            </div>
+                        </>
+                    )}
+                </Disclosure>
+
+                {/* menu  */}
+                <div className="hidden text-center lg:flex lg:items-center">
+                    <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
+                        {Object.entries(navigation).map((menu, index) => (
+                            <li className="mr-3 nav__item" key={index}>
+                                <Link href= {menu[1]}>
+
+                                    <a className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                                        {/*{menu} */}
+                                        {menu[0]}
+                                    </a>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <ThemeSwitcher />
-              </div>
-            </div>
-          </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
-  )
+                <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+                    <Link target="_self" href="/#chatgpt">
+                        <a className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
+                            Get Started
+                        </a>
+                    </Link>
+
+                    <ThemeChanger />
+                </div>
+            </nav>
+        </div>
+    );
 }
