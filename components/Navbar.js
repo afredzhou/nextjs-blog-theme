@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
+import PostList from    "../pages/PostList";
 
 export default function Navbar() {
     // const navigation = [
@@ -13,11 +14,11 @@ export default function Navbar() {
     // ];
 
     const navigation = {
-        Product:'https://www.kaiyanmedical.com/',
+        Home:'/',
         Features:'https://www.kaiyanmedical.com/',
-        Pricing:'https://www.kaiyanmedical.com/',
+        Service:'https://www.kaiyanmedical.com/',
         Company: 'https://www.kaiyanmedical.com/',
-        Blog:'https://www.kaiyanmedical.com/',
+        Blog:'/PostList',
     };
 
     return (

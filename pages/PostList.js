@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { getPosts } from '../../utils/mdx-utils';
+import { getPosts } from '../utils/mdx-utils';
 
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import Layout, { GradientBackground } from '../../components/Layout';
-import ArrowIcon from '../../components/ArrowIcon';
-import { getGlobalData } from '../../utils/global-data';
-import SEO from '../../components/SEO';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Layout, { GradientBackground } from '../components/Layout';
+import ArrowIcon from '../components/ArrowIcon';
+import { getGlobalData } from '../utils/global-data';
+import SEO from '../components/SEO';
 
-export default function Index({ posts, globalData }) {
+export default function PostList({ posts, globalData }) {
   return (
     <Layout>
       <SEO title={globalData.name} description={globalData.blogTitle} />
@@ -46,7 +46,6 @@ export default function Index({ posts, globalData }) {
           ))}
         </ul>
       </main>
-      <Footer copyrightText={globalData.footerText} />
       <GradientBackground
         variant="large"
         className="fixed top-20 opacity-40 dark:opacity-60"
