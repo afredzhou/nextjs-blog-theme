@@ -5076,11 +5076,6 @@ next-remote-watch@1.0.0:
     commander "^5.0.0"
     express "^4.17.1"
 
-next-themes@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmmirror.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
-  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
-
 next@latest:
   version "12.2.4"
   resolved "https://registry.npmjs.org/next/-/next-12.2.4.tgz"
@@ -5733,7 +5728,7 @@ prop-ini@^0.0.2:
   dependencies:
     extend "^3.0.0"
 
-prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -5857,6 +5852,13 @@ quick-lru@^5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
+
+raf@^3.4.0:
+  version "3.4.1"
+  resolved "https://registry.npmmirror.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
+  integrity sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==
+  dependencies:
+    performance-now "^2.1.0"
 
 ramda@0.27.1:
   version "0.27.1"
@@ -6962,6 +6964,14 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
+
+typewriter-effect@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.npmmirror.com/typewriter-effect/-/typewriter-effect-2.19.0.tgz#396fe35e1313279ae6202775bf8dff5db37c5b64"
+  integrity sha512-rhUX1ukmAXNFWUnMFx8CDU1uLWJQ7pRYzDU7WfHJRq43i6SmWSP9vFiUsOGfXINodUAgZiJ5xnzwLciHxZDGDg==
+  dependencies:
+    prop-types "^15.6.2"
+    raf "^3.4.0"
 
 typical@^4.0.0:
   version "4.0.0"

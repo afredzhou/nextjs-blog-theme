@@ -1,21 +1,7 @@
-import classNames from 'classnames';
 import { useEffect } from 'react';
-import styles from './Layout.module.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-
-export function GradientBackground({ variant, className }) {
-  const classes = classNames(
-    {
-      [styles.colorBackground]: variant === 'large',
-      [styles.colorBackgroundBottom]: variant === 'small',
-    },
-    className
-  );
-
-  return <div className={classes} />;
-}
 
 export default function Layout({ children }) {
   const setAppTheme = () => {
@@ -55,7 +41,7 @@ export default function Layout({ children }) {
   return (
     <div className="relative pb-24 overflow-hidden">
       <Navbar></Navbar>
-      <div className="flex flex-col items-center max-w-2xl w-full mx-auto">
+      <div className="flex flex-col items-center max-w-screen-2xl	 mx-10">
         {children}
       </div>
       <Footer></Footer>
