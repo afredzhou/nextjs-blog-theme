@@ -68,6 +68,7 @@ export default function Footer() {
                             <a
                                 href="https://twitter.com/"
                                 target="_blank"
+                                rel="noreferrer"
 
                             >
                                 <span className="sr-only">Twitter</span>
@@ -77,6 +78,7 @@ export default function Footer() {
                                 href="https://facebook.com/"
                                 target="_blank"
                                 rel="noreferrer"
+
                            >
                                 <span className="sr-only">Facebook</span>
                                 <Facebook />

@@ -9,7 +9,7 @@ const FreelancreIntro = () => {
                     <div className="w-full sm:w-1/4 mb-7 sm:mb-0">
                             <img src="/img/Afred_Zhou.jpeg" className="rounded-full w-96" alt="" />
                         </div>
-                            <h1 className="">
+                            <h1 className="text-2xl">
                                 Hello, My name is Afred Zhou,I love design and I hope to make
                                 awesome designs and also I  create a&nbsp;
                                 <span
